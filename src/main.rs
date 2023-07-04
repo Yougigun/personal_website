@@ -7,24 +7,30 @@ use log::{debug, error, info};
 async fn hello() -> impl Responder {
     HttpResponse::Ok().body(
         r#"<!DOCTYPE html>
-    <html>
-    <head>
-        <style>
-            .center {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-                font-size: 3em;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="center">
-            <p>Gary's website!</p>
-        </div>
-    </body>
-    </html>"#,
+        <html>
+        <head>
+            <style>
+                body {
+                    background-color: black;
+                }
+        
+                .center {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100vh;
+                    font-size: 3em;
+                    color: gold; /* Change this to any shiny color you prefer */
+                }
+            </style>
+        </head>
+        <body>
+            <div class="center">
+                <p>Gary's website!</p>
+            </div>
+        </body>
+        </html>
+        "#,
     )
 }
 
@@ -43,7 +49,7 @@ async fn main() -> std::io::Result<()> {
     env_logger::init();
     let server = HttpServer::new(|| {
         App::new()
-            .wrap(Logger::new("%a %r %s bytes %b %D ms"))
+            .wrap(Logger::new("%a %r %s %b(bytes) %D(ms)"))
             .service(hello)
             .service(echo)
             .route("/hey", web::get().to(manual_hello))
