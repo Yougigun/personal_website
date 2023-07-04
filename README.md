@@ -1,9 +1,9 @@
 # personal_website
 
-
 ## Roadmap
-- [ ] HTTPS
-- [ ] CDN
+
+- [x] HTTPS
+- [x] CDN
 - [ ] CICD
 - [ ] Terraform
 - [ ] TBC...
