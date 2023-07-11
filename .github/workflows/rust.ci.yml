@@ -1,5 +1,5 @@
 name: Rust Build & Test
-run-name: 🚀 Build & Test on ${{ github.sha }} by  ${{ github.actor }}
+run-name: 🚀 Build & Test on ${{ github.sha }} by  @${{ github.actor }}${{ github.actor }}
 on:
   push:
     branches: [main]
