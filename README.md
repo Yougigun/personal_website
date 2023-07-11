@@ -4,6 +4,6 @@
 
 - [x] HTTPS
 - [x] CDN
-- [ ] CICD
+- [x] CICD
 - [ ] Terraform
 - [ ] TBC...
