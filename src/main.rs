@@ -5,7 +5,6 @@ use log::{debug, error, info};
 
 #[get("/")]
 async fn hello() -> impl Responder {
-    dddd
     HttpResponse::Ok().body(
         r#"<!DOCTYPE html>
         <html>
