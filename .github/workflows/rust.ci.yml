@@ -1,9 +1,7 @@
-name: Rust Build & Test
+name: Rust Build & Test & Deploy
 run-name: 🚀 Build & Test on ${{ github.sha }} by ${{ github.actor }}
 on:
   push:
-    branches: [main]
-  pull_request:
     branches: [main]
 
 env:
@@ -11,7 +9,7 @@ env:
 
 jobs:
   build:
-    name: Build & Test on ${{ github.sha }}
+    name: Build & Test & Publish on ${{ github.sha }}
     runs-on: ubuntu-latest
 
     steps:
