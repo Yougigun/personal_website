@@ -1,12 +1,22 @@
 # Start from the latest Rust base image
-FROM rust:1.70.0 as builder
-
+FROM rust:1.70.0 as chef
+RUN cargo install cargo-chef
 # Create a new empty shell project
 WORKDIR /usr/src/app
 
+FROM chef as planner
 # Copy our source code
 COPY ./ ./
+# Generate info for caching dependencies
+RUN cargo chef prepare --recipe-path recipe.json
 
+
+FROM chef AS builder
+COPY --from=planner /usr/src/app/recipe.json recipe.json
+# Build & cache dependencies
+RUN cargo chef cook --release --recipe-path recipe.json
+# Copy source code from previous stage
+COPY . .
 # Build for release
 RUN cargo build --release
 
