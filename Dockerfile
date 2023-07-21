@@ -16,5 +16,8 @@ FROM debian:buster-slim
 # Copy the binary from builder to this new stage
 COPY --from=builder /usr/src/app/target/release/personal_website /usr/local/bin
 
+# Port
+EXPOSE 8080
+
 # Command to run the binary
 ENTRYPOINT ["personal_website"]
