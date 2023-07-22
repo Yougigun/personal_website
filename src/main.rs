@@ -37,9 +37,6 @@ async fn hello() -> impl Responder {
         <body>
             <div class="center">
                 <p>Welcome to Gary's website!!</p>
-                <a href="http://www.bnb.tw" target="_blank">
-                    <button>Visit BNB</button>
-                </a>
             </div>
         </body>
         </html>
