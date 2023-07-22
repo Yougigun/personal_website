@@ -119,8 +119,8 @@ async fn bnb(_req_body: String) -> impl Responder {
                 margin-bottom: 10px;
             }
     
-            /* Media query for screens smaller than 600px */
-            @media only screen and (max-width: 600px) {
+            /* Media query for screens smaller than 900px */
+            @media only screen and (max-width: 900px) {
                 .container {
                     width: 95%;
                 }
