@@ -55,6 +55,7 @@ async fn bnb(_req_body: String) -> impl Responder {
     <!DOCTYPE html>
     <html>
     <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
             body {
                 background-color: #F7F7F7;
@@ -62,10 +63,12 @@ async fn bnb(_req_body: String) -> impl Responder {
             }
     
             .container {
-                width: 100%;
+                width: 96%;
+                margin: auto;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                text-align: center;
             }
     
             .booking {
@@ -76,8 +79,8 @@ async fn bnb(_req_body: String) -> impl Responder {
             }
     
             .room {
-                width: 50%;
-                margin: 20px;
+                width: 40%;
+                margin: 20px 0;
                 padding: 20px;
                 box-sizing: border-box;
                 border-radius: 15px;
@@ -87,7 +90,8 @@ async fn bnb(_req_body: String) -> impl Responder {
             }
     
             .room img {
-                width: 70%;
+                max-width: 99%;
+                height: auto;
                 border-radius: 10px;
             }
     
@@ -108,11 +112,24 @@ async fn bnb(_req_body: String) -> impl Responder {
             .booking div {
                 margin-bottom: 10px;
             }
+    
+            /* Media query for screens smaller than 600px */
+            @media only screen and (max-width: 600px) {
+                .container {
+                    width: 95%;
+                }
+                .room {
+                    width: 95%;
+                }
+                .room img {
+                    max-width: 90%;
+                }
+            }
         </style>
     </head>
     <body>
         <div class="container">
-            <h1>Welcome to Urban adobe!</h1>
+            <h1>Welcome to my demo bnb!</h1>
             <div class="booking">
                 <div>
                     <label for="date">Select date:</label>
@@ -142,8 +159,8 @@ async fn bnb(_req_body: String) -> impl Responder {
         </script>
     </body>
     </html>
-    "#
     
+    "#
     ,)
 }
 
