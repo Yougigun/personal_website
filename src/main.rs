@@ -1,12 +1,16 @@
-use actix_web::{get, middleware::Logger, post, web, App, HttpResponse, HttpServer, Responder};
+use actix_web::{
+    get, http, middleware::Logger, post, web, App, HttpResponse, HttpServer, Responder,
+};
 
 #[allow(unused_imports)]
 use log::{debug, error, info};
 
 #[get("/")]
 async fn hello() -> impl Responder {
-    HttpResponse::Ok().body(
-        r#"<!DOCTYPE html>
+    HttpResponse::Ok()
+        .insert_header((http::header::CACHE_CONTROL, "public, max-age=300"))
+        .body(
+            r#"<!DOCTYPE html>
         <html>
         <head>
             <style>
@@ -41,7 +45,7 @@ async fn hello() -> impl Responder {
         </html>
         
         "#,
-    )
+        )
 }
 
 #[post("/echo")]
@@ -51,7 +55,9 @@ async fn echo(req_body: String) -> impl Responder {
 
 #[get("/demo/bnb")]
 async fn bnb(_req_body: String) -> impl Responder {
-    HttpResponse::Ok().body(r#"
+    HttpResponse::Ok()
+    .insert_header((http::header::CACHE_CONTROL, "public, max-age=300"))
+    .body(r#"
     <!DOCTYPE html>
     <html>
     <head>
