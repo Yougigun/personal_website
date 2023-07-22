@@ -73,5 +73,5 @@ jobs:
             echo "Start deploy"
             cd ~/github/personal_website
             git pull
-            docker compose -f docker-compose.prod.yml up -d 
+            docker-compose -f docker-compose.prod.yml up -d 
             docker system prune
