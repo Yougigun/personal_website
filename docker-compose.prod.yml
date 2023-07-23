@@ -11,6 +11,7 @@ services:
   garyyou.com:
     image: garyyou.com:latest
     # depends_on:
+      
     # - db
     # environment:
     #   DATABASE_URL: "postgres://postgres:${POSTGRES_PASSWORD}@db:5432"
