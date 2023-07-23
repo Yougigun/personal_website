@@ -5,7 +5,8 @@
 ## Roadmap
 
 - [x] HTTPS
-- [x] CDN
-- [x] CICD
+- [x] CDN(Cloudflare)
+- [x] CICD(Github Action)
+- [x] Gateway
 - [ ] Terraform
 - [ ] TBC...
