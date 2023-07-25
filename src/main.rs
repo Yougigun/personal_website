@@ -36,7 +36,7 @@ async fn hello() -> impl Responder {
         </head>
         <body>
             <div class="center">
-                <p>Welcome to Gary's website!!!</p>
+                <p>Welcome to Gary's website to test pr deploy!!!</p>
             </div>
         </body>
         </html>
