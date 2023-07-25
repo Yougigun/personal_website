@@ -1,6 +1,6 @@
 {
     "rust-analyzer.linkedProjects": [
-      "./garyyou.com/Cargo.toml",
+      "./garyyou.com/Cargo.toml"
     ]
   }
   
