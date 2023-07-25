@@ -1,7 +1,7 @@
 version: "3"
 services:
   # gateway
-  gateway:
+  nginx:
     image: nginx
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
@@ -11,15 +11,16 @@ services:
   garyyou.com:
     image: garyyou.com:latest
     # depends_on:
-      
+
     # - db
     # environment:
     #   DATABASE_URL: "postgres://postgres:${POSTGRES_PASSWORD}@db:5432"
     build:
-      context: .
+      context: ./garyyou.com
       dockerfile: Dockerfile
     ports:
-    - "8080:8080" # for the traffic from host to container
+      - "8080:8080" # for the traffic from host to container
+
 
   # # paula's blog
   # paula_blog:

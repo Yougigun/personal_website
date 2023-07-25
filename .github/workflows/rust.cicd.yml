@@ -24,8 +24,10 @@ jobs:
           restore-keys: ${{ runner.os }}-cargo-
       - name: Build
         run: cargo build --verbose
+        working-directory: ./garyoyu.com
       - name: Run tests
         run: cargo test --verbose
+        working-directory: ./garyoyu.com
 
       # - name: Set up Docker Buildx
       #   uses: docker/setup-buildx-action@v2
