@@ -5,6 +5,12 @@ use actix_web::{
 #[allow(unused_imports)]
 use log::{debug, error, info};
 
+// get method with path "/about" return a string
+#[get("/about")]
+async fn about() -> impl Responder {
+    HttpResponse::Ok().body("About")
+}
+
 #[get("/")]
 async fn hello() -> impl Responder {
     HttpResponse::Ok()
