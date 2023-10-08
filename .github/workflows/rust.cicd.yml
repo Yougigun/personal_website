@@ -68,6 +68,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+      - name: Check cache
+        run: |
+          ls -la ~/.cargo
+          ls -la target/
 
       - name: Deploy
         uses: appleboy/ssh-action@master
