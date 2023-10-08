@@ -25,6 +25,7 @@ jobs:
       - name: Check cache
         working-directory: garyyou.com
         run: |
+          pwd
           ls -la ~/.cargo
           ls -la target/
       - name: Build
