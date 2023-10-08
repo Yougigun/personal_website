@@ -23,6 +23,11 @@ jobs:
             ./garyyou.com/target/
           key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
           restore-keys: ${{ runner.os }}-cargo-
+      - name: Check cache
+        working-directory: garyyou.com
+        run: |
+          ls -la ~/.cargo
+          ls -la target/
       - name: Build
         run: cargo build --verbose
         working-directory: garyyou.com
@@ -65,11 +70,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      - name: Check cache
-        working-directory: garyyou.com
-        run: |
-          ls -la ~/.cargo
-          ls -la target/
 
       - name: Deploy
         uses: appleboy/ssh-action@master
