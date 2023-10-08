@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - run: cargo version
       - uses: actions/checkout@v3
       - name: Cache dependencies
         uses: actions/cache@v3
