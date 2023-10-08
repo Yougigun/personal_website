@@ -20,15 +20,9 @@ jobs:
         with:
           path: |
             ~/.cargo
-            target/
+            ./garyyou.com/target/
           key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
           restore-keys: ${{ runner.os }}-cargo-
-      - name: Check cache
-        working-directory: garyyou.com
-        run: |
-          pwd
-          ls -la ~/.cargo
-          ls -la target/
       - name: Build
         run: cargo build --verbose
         working-directory: garyyou.com
