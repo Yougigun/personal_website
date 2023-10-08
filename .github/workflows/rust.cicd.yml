@@ -23,6 +23,7 @@ jobs:
           key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
           restore-keys: ${{ runner.os }}-cargo-
       - name: Check cache
+        working-directory: garyyou.com
         run: |
           ls -la ~/.cargo
           ls -la target/
@@ -69,6 +70,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Check cache
+        working-directory: garyyou.com
         run: |
           ls -la ~/.cargo
           ls -la target/
