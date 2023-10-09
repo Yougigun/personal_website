@@ -9,7 +9,7 @@ env:
 
 jobs:
   build:
-    name: Build & Test & Publish on ${{ github.sha }}
+    name: Build & Test
     runs-on: ubuntu-latest
 
     steps:
@@ -67,7 +67,7 @@ jobs:
       #       *.cache-to=type=gha,mode=max
 
   deploy:
-    name: Deploy ${{ github.sha }}
+    name: Deploy
     needs: build
     runs-on: ubuntu-latest
 
